@@ -1,22 +1,53 @@
 {
-  "main": "node_modules/expo/AppEntry.js",
-  "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
-    "eject": "expo eject"
-  },
+  "name": "chatterbox",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "expo": "~36.0.0",
-    "react": "~16.9.0",
-    "react-dom": "~16.9.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
-    "react-native-web": "~0.11.7"
+    "@pusher/chatkit-client": "^1.13.4",
+    "@pusher/chatkit-server": "^2.4.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@testing-library/user-event": "^7.2.1",
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.0.2",
+    "cors": "^2.8.5",
+    "cra-template": "1.0.0",
+    "express": "^4.17.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "^3.3.0"
   },
-  "devDependencies": {
-    "babel-preset-expo": "~8.0.0",
-    "@babel/core": "^7.0.0"
+  "scripts": {
+    "start": "concurrently \"node ./src/server.js\" \"react-scripts start\"",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
-  "private": true
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "description": "A simple web application to send short-form messages with friends.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sandratourjman/chatterbox.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sandratourjman/chatterbox/issues"
+  },
+  "homepage": "https://github.com/sandratourjman/chatterbox#readme"
 }
